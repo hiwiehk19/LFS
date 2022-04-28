@@ -4,7 +4,7 @@ import "../css/landing.css";
 import Axios from "axios";
 // import image from "../img/undraw_lost_bqr2.svg";
 import image from "../img/lost-2.svg";
-import developer from "../img/developer_outline I.svg";
+import about from "../img/about.jpg";
 import login from "../img/login-1.svg";
 import list_item from "../img/list-item.svg";
 import notification from "../img/notification.svg";
@@ -79,15 +79,15 @@ export default function Home() {
       <Container fluid className="total-inspiration">
         <div>
           <img
-            src={developer}
-            style={{ width: "500px", height: "500px" }}
+            src={about}
+            style={{ width: "500px", height: "450px" }}
             alt=""
           />
         </div>
         <Row className="inspiration">
           <h6 className="section-heading">About lost and found</h6>
           <p>
-           “Lost and Found” is a web and mobile based application that allow the users to post an item, whether it is a lost or found item. System moderators will ensure that the transactions will be smooth and trustworthy. The system caters any items both living and non-living things such as your cellphones, devices, dogs, cats, etc. Lost and Found is a unique platform through which peoples can find their loved ones who are missing in some tragedy or place. First of all, user come to the platform of lost and found then he/she will register to the site and report the missing/sighting of the particular person with filling the data that is required like age, name, complexion, height, weight, attire etc. After the successful reporting of missing/sighting person he/she can get the notification of matching profile/results of the registered report then he can go through the matching results and contact the person who has found that missing person.
+           “Lost and Found” is an online platform that allow the users to post an item, whether it is a lost or found item. System moderators will ensure that the transactions will be smooth and trustworthy. The system caters any items both living and non-living things such as your cellphones, devices, dogs, cats, etc. Lost and Found is a unique platform through which peoples can find their loved ones who are missing in some tragedy or place. First of all, user come to the platform of lost and found then he/she will register to the site and report the missing/sighting of the particular person with filling the data that is required like age, name, complexion, height, weight, attire etc. After the successful reporting of missing/sighting person he/she can get the notification of matching profile/results of the registered report then he can go through the matching results and contact the person who has found that missing person.
           </p>
           <Button variant="custom" size="lg">
             Get Started
