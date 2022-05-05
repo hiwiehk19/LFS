@@ -138,61 +138,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Container>{/* 
-      <Container fluid>
-        <div className="total-contact-form">
-          <div className="contact-title">
-            <h6 className="section-heading"> Contact Form</h6>
-            <p>
-              If there is something you want to suggest or may be just a hello
-              do reach out.
-            </p>
-          </div>
-          <div className="contact-form">
-            <Form>
-              <Form.Label>Name :</Form.Label>
-              <Form.Control
-                size="lg"
-                type="text"
-                placeholder="Enter name"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-              <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address :</Form.Label>
-                <Form.Control
-                  type="email"
-                  size="lg"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Message :</Form.Label>
-                <Form.Control
-                  size="lg"
-                  as="textarea"
-                  rows={6}
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                />
-              </Form.Group>
-              <Button variant="custom" onClick={sendMessage}>
-                Submit
-              </Button>
-            </Form>
-          </div>
-        </div>
-      </Container> */}
+      </Container>\
       <Container fluid>
         <div className="footer">
+          <h6>contact us</h6>
           <div className="social-icon">
             <a href="https://github.com" target="_blank"><img src={github} className="icon github" alt="" /></a> 
             <a href="https://www.linkedin.com/" target="_blank"><img src={linkedin} className="icon" alt="" /></a> 

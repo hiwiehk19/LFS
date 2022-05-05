@@ -57,19 +57,20 @@ app.use(passport.session())
 //       done(err, user);
 //     });
 // });
+const MONGO_URL=`mongodb+srv://lostDB:hiwotzelalem@cluster0.pgdto.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
-// mongoose.connect('mongodb+srv://swarupkumar:eashok410@lfs.q2in2.mongodb.net/test',{
-//     useNewUrlParser: true,
-//     useUnifiedTopology:true,
-//     useCreateIndex:true
-// })
+ mongoose.connect(MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+     useCreateIndex:true
+ })
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.6kk18.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`,{
+/* mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.6kk18.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology:true,
     useFindAndModify:false,
-    useCreateIndex:true
-})
+    useCreateIndex:true 
+}) */
 
 mongoose.connection.on('connected',()=>{
     console.log('Database connected')
