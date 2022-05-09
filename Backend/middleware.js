@@ -8,7 +8,7 @@ exports.requireSignin=(req,res,next)=>{
         // console.log("Request is : ",req.body)
         const token=req.headers.authorization.split(" ")[1]
         // console.log(token)
-        const user =jwt.verify(token,process.env.JWT_SECRET)
+        const user =jwt.verify(token,'SEDTGYHYGTFRDRGYH356778886GTGT')
         // console.log("User is : ",user)
         req.user=user
         req.role='user'
