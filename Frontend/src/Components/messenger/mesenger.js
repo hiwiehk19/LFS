@@ -1,6 +1,8 @@
 
 import "./messenger.css"
 import Navbar from "../Navbar";
+import Conversation from "../conversations/conversation"
+import Message from "../message/Message"
 export default function mesenger() {
   return (
 <>
@@ -9,6 +11,7 @@ export default function mesenger() {
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <input placeholder="Search for friends" className="chatMenuInput" />
+           <Conversation />
             {/* {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)}>
                 <Conversation conversation={c} currentUser={user} />
@@ -18,6 +21,7 @@ export default function mesenger() {
         </div>
         <div className="chatBox">
           <div className="chatBoxWrapper">
+              <Message />
             {/* {currentChat ? (
               <>
                 <div className="chatBoxTop">
