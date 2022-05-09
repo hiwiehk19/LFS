@@ -37,7 +37,7 @@ function App()
       );
     });
   },[])
-  // const name='Swarup K'
+  
   return (
     <>
     <Router>
@@ -45,7 +45,7 @@ function App()
         <Route path='/' component={Home} exact/>
         <Route path='/sign-up' component={Signup} exact/>
         <Route path='/log-in' component={Login} />
-        <PrivateRoute path='/feed' component={Feed}  />
+        <PrivateRoute path='/feed' component={Feed} exact/>
         <Route path='/mylistings'  component={MyListings} exact />
         <Route path='/responses' component={Response} exact />
         <ToastProvider autoDismiss={true} placement={"bottom-right"}>

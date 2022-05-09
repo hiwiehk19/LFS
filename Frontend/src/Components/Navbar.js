@@ -49,7 +49,7 @@ function Navbar() {
       <div className="navbar">
         <div className="logo">
           <a style={{ textDecoration: "none", color: "white" }} href="/">
-            <h2><span style={{ textDecoration: "none", color: "red" }} >L  st</span> and F<span style={{ textDecoration: "none", color: "red" }}>o</span>und</h2>
+            <h2><span style={{ textDecoration: "none", color: "red" }} >L  st</span> ? <span style={{ textDecoration: "none", color: "green" }} >f</span><span style={{ textDecoration: "none", color: "red" }}>o</span><span style={{ textDecoration: "none", color: "green" }} >und</span></h2>
           </a>
         </div>
 
@@ -81,7 +81,7 @@ function Navbar() {
         <ToastProvider autoDismiss={true} placement={"bottom-right"}><Lost_item /></ToastProvider>
           {/* <Found_item /> */}
           <ul>
-            <a style={{ textDecoration: "none", color: "white" }} href="/home">
+            <a style={{ textDecoration: "none", color: "white" }} href="/">
               Home
             </a>
             {/* {props.name} */}

@@ -16,9 +16,9 @@ const { token } = require('morgan');
 // const { Router } = require('express');
 // const { token } = require('morgan');
 require("dotenv").config({path: '../../.env'});
-const JWT_SECRET=process.env.JWT_SECRET
-const JWT_EXPIRES=process.env.JWT_EXPIRES
-const NODE_ENV=process.env.NODE_ENV
+const JWT_SECRET='SEDTGYHYGTFRDRGYH356778886GTGT'
+const JWT_EXPIRES='7'
+const NODE_ENV='production'
 // console.log(JWT_EXPIRES);
 // console.log(JWT_SECRET);
 
@@ -192,7 +192,7 @@ router.post('/login',checkFieldLogin,(req,res,next)=>{
             if(dbpassword==password){
                 console.log("Logging in")
                 //sendToken(checkUser,201,req,res)
-                const jwt_token=jwt.sign({_id:data._id,role:"user"},process.env.JWT_SECRET,{expiresIn: '1hr'})
+                const jwt_token=jwt.sign({_id:data._id,role:"user"},'SEDTGYHYGTFRDRGYH356778886GTGT',{expiresIn: '1hr'})
                 // res.send("successfull")
                 res.cookie('token',token,{expiresIn:'1hr'})
                 res.status(200).json({
@@ -285,7 +285,7 @@ router.post('/sendmessage',(req,res)=>{
 
     const mailOption={
         from:email,
-        to:'eswarupkumar1111@gmail.com',
+        to:'hiwotzelalem3@gmail.com@gmail.com',
         subject:`Review from ${name}`,
         text:message
     }

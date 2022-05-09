@@ -12,8 +12,10 @@ function Login() {
   const [user_info, setuser_info] = useState("");
   const history = useHistory();
   function login() {
-    // console.log(setinfo)
+    console.log(setinfo)
+    console.log("please help me")
     var payload = {
+      
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     };
@@ -23,7 +25,7 @@ function Login() {
       data: payload,
       withCredentials: true,
       credentials: "include",
-      // url: "http://localhost:5000/login"
+      //url: "*"
     })
       .then((response) => {
         // console.log("Response is :",response)
@@ -42,33 +44,33 @@ function Login() {
       .catch((error) => {
         console.log(error);
         console.log("Error occured");
-      });
-    // .then((response)=>{
-    //     console.log('Login Data sent')
-    //     this.setState({
-    //         info:response.data
-    //     })
-    //     // this.props.history.push('/feed')
-    // })
-    // .catch(()=>{
-    //     console.log('Error occured')
-    // })
+      })
+     .then((response)=>{
+         console.log('Login Data sent')
+         this.setState({
+             info:response.data
+         })
+          this.props.history.push('/feed')
+     })
+     .catch(()=>{
+         console.log('Error occured')
+     })
   }
 
-  // login = () => {
+  /*  login = () => {
 
-  //     axios({
-  //       method: "POST",
-  //       data: {
-  //         username: document.getElementById('username').value,
-  //         password: document.getElementById('password').value,
-  //       },
-  //       withCredentials: true,
-  //       url: " http://localhost:5000/login",
-  //     })
-  //     .then((res) => console.log(res))
-  //     .catch((err)=>console.log(err));
-  //   };
+      axios({
+        method: "POST",
+        data: {
+           username: document.getElementById('username').value,
+           password: document.getElementById('password').value,
+        },
+         withCredentials: true,
+         url: " http://localhost:5000/login",
+       })
+       .then((res) => console.log(res))
+       .catch((err)=>console.log(err));
+     }; */
 
   return (
     <>
@@ -97,7 +99,7 @@ function Login() {
             required
           />
           {/* <input type="submit" placeholder="Submit"></input> */}
-          <button type="button" className="submit" onClick={login}>
+          <button type="button" className="submit" onClick={login} >
             Submit
           </button>
           <p style={{ color: "white" }}>
