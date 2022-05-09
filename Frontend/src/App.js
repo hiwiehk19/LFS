@@ -13,6 +13,7 @@ import Home from './Components/Home';
 import ItemPage from './Components/ItemPage';
 // import Feed from './Components/Feed'
 import MyListings from './Components/MyListings'
+import Messenger from './Components/messenger/mesenger.js'
 import { ToastProvider } from 'react-toast-notifications';
 window.OneSignal = window.OneSignal || [];
 const OneSignal = window.OneSignal;
@@ -47,6 +48,7 @@ function App()
         <Route path='/log-in' component={Login} />
         <PrivateRoute path='/feed' component={Feed} exact/>
         <Route path='/mylistings'  component={MyListings} exact />
+        <Route path='/messenger'  component={Messenger} exact />
         <Route path='/responses' component={Response} exact />
         <ToastProvider autoDismiss={true} placement={"bottom-right"}>
 

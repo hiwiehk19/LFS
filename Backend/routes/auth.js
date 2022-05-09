@@ -192,7 +192,7 @@ router.post('/login',checkFieldLogin,(req,res,next)=>{
             if(dbpassword==password){
                 console.log("Logging in")
                 //sendToken(checkUser,201,req,res)
-                const jwt_token=jwt.sign({_id:data._id,role:"user"},'SEDTGYHYGTFRDRGYH356778886GTGT',{expiresIn: '1hr'})
+                const jwt_token=jwt.sign({_id:data._id,role:"user"},'SEDTGYHYGTFRDRGYH356778886GTGT',{expiresIn: '9999hr'})
                 // res.send("successfull")
                 res.cookie('token',token,{expiresIn:'1hr'})
                 res.status(200).json({
