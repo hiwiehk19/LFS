@@ -6,6 +6,8 @@ import { Button, Modal, Form } from "react-bootstrap";
 function Found_item() {
   const [itemname, setitemname] = useState("");
   const [description, setdescription] = useState("");
+  const [place, setplace] = useState("");
+  const [time, settime] = useState("");
   const [itemimage, setitemimage] = useState("");
 
   const [showF, setShowF] = useState(false);
@@ -74,6 +76,24 @@ function Found_item() {
                 placeholder="Enter Description"
                 value={description}
                 onChange={(e) => setdescription(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Place</Form.Label>
+              <Form.Control
+                as="textarea"
+                placeholder="Enter the approximate place where the item was lost or found"
+                value={place}
+                onChange={(e) => setplace(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>time</Form.Label>
+              <Form.Control
+                as="textarea"
+                placeholder="select the approximate date and time where the item was lost or found"
+                value={time}
+                onChange={(e) => settime(e.target.value)} 
               />
             </Form.Group>
             <Form.Group>

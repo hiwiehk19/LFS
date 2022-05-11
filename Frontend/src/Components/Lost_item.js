@@ -14,6 +14,9 @@ function Lost_item() {
   const [itemquestion, setitemquestion] = useState("");
   const [itemimage, setitemimage] = useState([]);
   const [type, settype] = useState("");
+  const [place, setplace] = useState("");
+  const [time, settime] = useState("");
+  
   const [alertshow, setalertShow] = useState(true);
 
   const handleShow = () => setShow(true);
@@ -36,6 +39,9 @@ function Lost_item() {
       info.append("description", description);
       info.append("question", itemquestion);
       info.append("type", type);
+      info.append("time", time);
+      info.append("place", place);
+
       itemimage.map((itemImage) => {
         info.append("itemPictures", itemImage, itemImage.name);
       });
@@ -68,6 +74,8 @@ function Lost_item() {
           setdescription("");
           settype("");
           setitemquestion("");
+          settime("");
+          setplace("");
           setitemimage([]);
           console.log("Executed");
           setShow(false);
@@ -132,6 +140,7 @@ function Lost_item() {
               />
             </Form.Group>
 
+
             <Form.Group>
               <Form.Label>Item type<span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
@@ -144,6 +153,28 @@ function Lost_item() {
                 <option value={"Lost"}>Lost It</option>
                 <option value={"Found"}>Found It</option>
               </Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Place</Form.Label>
+              <Form.Control
+                as="textarea"
+                placeholder="Enter the approximate place where the item was lost or found"
+                value={place}
+                onChange={(e) => setplace(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>time</Form.Label>
+              
+              <input type="date" id="DOB" name="DOB" min="1979-01-01" max="2099-12-31" 
+               value={time}
+               onChange={(e) => settime(e.target.value)} />
+              {/* <Form.Control
+                as="textarea"
+                placeholder="select the approximate date and time where the item was lost or found"
+                value={time}
+                onChange={(e) => settime(e.target.value)} 
+              /> */}
             </Form.Group>
             <Form.Group>
               <Form.File
