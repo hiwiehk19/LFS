@@ -13,7 +13,7 @@ import Home from './Components/Home';
 import ItemPage from './Components/ItemPage';
 // import Feed from './Components/Feed'
 import MyListings from './Components/MyListings'
-import Messenger from './Components/messenger/mesenger.js'
+import Messenger from './pages/messenger/mesenger.js'
 import { ToastProvider } from 'react-toast-notifications';
 window.OneSignal = window.OneSignal || [];
 const OneSignal = window.OneSignal;

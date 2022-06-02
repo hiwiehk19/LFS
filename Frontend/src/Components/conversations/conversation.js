@@ -1,10 +1,37 @@
- import "./conversation.css"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "./conversation.css";
 
-export default function conversation() {
+export default function Conversation({ conversation, currentUser }) {
+  const [user, setUser] = useState(null);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  useEffect(() => {
+    const friendId = conversation.members.find((m) => m !== currentUser._id);
+
+    const getUser = async () => {
+      try {
+        const res = await axios("/users?userId=" + friendId);
+        setUser(res.data);
+      } catch (err) {
+        console.log(err);
+      } 
+    };
+    getUser();
+  }, [currentUser, conversation]);
+
   return (
-    <div className="conversation"><img className="conversationImg" src="https://wallup.net/wp-content/uploads/2019/10/913382-blonde-flower-kid-long-hair-beautiful-girl-748x564.jpghttps://wallup.net/wp-content/uploads/2019/10/913382-blonde-flower-kid-long-hair-beautiful-girl-748x564.jpg"alt=""/>
-    <span className="conversationName">Hiwot</span>
+    <div className="conversation">
+      <img
+        className="conversationImg"
+        src={
+          user?.profilePicture
+            ? PF + user.profilePicture
+            : PF + "person/noAvatar.png"
+        }
+        alt=""
+      />
+      <span className="conversationName">{user?.username}</span>
     </div>
-  )
+  );
 }
- 

@@ -35,7 +35,9 @@ function Found_item() {
       credentials: "include",
       // url: "http://localhost:5000/login"
     })
-      .then((response) => console.log(response))
+      .then((response) => {console.log(response);
+      window.location.reload();
+      })
       .catch((err) => console.log(err));
 
     setShowF(false);

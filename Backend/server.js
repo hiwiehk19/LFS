@@ -2,12 +2,15 @@ var express = require('express')
 const app = express()
 // var bodyParser = require('body-parser')
 // const morgan =require('morgan')
-require("dotenv").config({path: '../.env'});
+//require("dotenv").config({path: '../.env'});
 const cors =require('cors')
 const port = 5000
 const cookie_parser=require("cookie-parser")
 const mongoose =require('mongoose')
 const routes = require('./routes/auth')
+const conversationRoutes = require('./routes/conversations')
+const messageRoutes = require('./routes/messages')
+
 const category = require('./routes/category')
 const passport = require('passport');
 var path = require('path');
@@ -78,6 +81,8 @@ mongoose.connection.on('connected',()=>{
 
 app.use('/',routes)
 app.use('/',category)
+app.use('/conversations',conversationRoutes)
+app.use('/messages',messageRoutes)
 
 
 app.listen(port,()=> console.log(`Listening to port ${port}`))

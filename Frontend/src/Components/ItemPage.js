@@ -70,7 +70,7 @@ function ItemPage(props) {
   const item_type = props.location.search
     .substring(1)
     .split("=")[2]
-    .split("/")[0];
+    .split("/")[0]; 
   const item_id = props.location.search
     .substring(1)
     .split("=")[1]

@@ -1,17 +1,18 @@
-import "./message.css"
+import "./message.css";
+import { format } from "timeago.js";
 
-export default function Message() {
+export default function Message({ message, own }) {
   return (
-    <div className="message">
-        <div className="messageTop" >
-        <img className="messageImg" src="https://wallup.net/wp-content/uploads/2019/10/913382-blonde-flower-kid-long-hair-beautiful-girl-748x564.jpghttps://wallup.net/wp-content/uploads/2019/10/913382-blonde-flower-kid-long-hair-beautiful-girl-748x564.jpg"alt=""/>
-       <p className="messageText">
-     Hello this is from message
-       </p>
-
-        </div>
-        <div className="messageButton">1 hour ago</div>
-
-    </div>
-  )
+    <div className={own ? "message own" : "message"}>
+      <div className="messageTop">
+        <img
+          className="messageImg"
+          src="https://images.pexels.com/photos/3686769/pexels-photo-3686769.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          alt=""
+        />
+        <p className="messageText">hello from messege component</p>
+      </div>
+      {/* <div className="messageBottom">{format(message.createdAt)}</div> */}
+    </div> 
+  );
 }
