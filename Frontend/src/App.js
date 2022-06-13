@@ -48,7 +48,7 @@ function App()
         <Route path='/log-in' component={Login} />
         <PrivateRoute path='/feed' component={Feed} exact/>
         <Route path='/mylistings'  component={MyListings} exact />
-        <Route path='/messenger'  component={Messenger} exact />
+     {/* <Route path='/messenger'  component={Messenger} exact /> */}
         <Route path='/responses' component={Response} exact />
         <ToastProvider autoDismiss={true} placement={"bottom-right"}>
 

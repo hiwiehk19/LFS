@@ -1,0 +1,38 @@
+
+.h2{
+    padding: 5px;
+    margin-bottom: 0px !important;
+    background-color:#301C05 ;
+   
+    
+    h5{
+       
+        text-align: Center;
+        color:white;
+    }
+}
+.appbar{
+    z-index: 444;
+    margin-top: 0px !important;
+    background-color:#301C05 !important;
+    align-items: center !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 5px 10px!important;
+    margin-top: 0px;
+}
+.tabs{
+
+
+}
+.appbar-text{
+    display: flex;
+    
+    background-color: blue;
+    color: blue;
+font-size: 25px !important;
+}
+a{
+    align-items: center;
+    justify-content: center;
+}

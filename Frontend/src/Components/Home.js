@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar  from "./Navbar"
 import "../css/landing.css";
 import Axios from "axios";
 // import image from "../img/undraw_lost_bqr2.svg";
