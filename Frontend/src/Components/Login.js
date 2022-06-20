@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "../css/newSignup.css";
 import axios from "axios";
+import developer from "../img/developer_outline I.svg";
 import { Redirect, useHistory } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-// import developer from "../img/developer_outline I.svg";
 
-// export default let [user,setUser]=useState(false)
 
 function Login() {
   let [info, setinfo] = useState("");
@@ -57,30 +56,17 @@ function Login() {
      })
   }
 
-  /*  login = () => {
-
-      axios({
-        method: "POST",
-        data: {
-           username: document.getElementById('username').value,
-           password: document.getElementById('password').value,
-        },
-         withCredentials: true,
-         url: " http://localhost:5000/login",
-       })
-       .then((res) => console.log(res))
-       .catch((err)=>console.log(err));
-     }; */
+ 
 
   return (
     <>
       <Navbar />
       <div style={{display:"flex"}}>
-        {/* <img
+         <img
           src={developer}
           style={{ width: "500px", height: "500px" }}
           alt=""
-        /> */}
+        /> 
         <form className="Box-1 login">
           <h1>Log in</h1>
           <p style={{ color: "white" }}>{info}</p>

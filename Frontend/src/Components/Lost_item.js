@@ -67,9 +67,11 @@ function Lost_item() {
         .then((response) => console.log(response))
         .then(() => {
           // eslint-disable-next-line no-lone-blocks
-          addToast("Wohoo 🤩! Item listed successfully.", {
+          addToast("Wohoo 🤩! Item listed successfully.",
+          {
             appearance: "success",
           });
+          
           setitemname("");
           setdescription("");
           settype("");
@@ -79,6 +81,7 @@ function Lost_item() {
           setitemimage([]);
           console.log("Executed");
           setShow(false);
+          window.location.reload();
         })
         .catch((err) => {
           console.log(err);
@@ -110,7 +113,7 @@ function Lost_item() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group>
+             {/* <Form.Group>
               <Form.Label>Item name<span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
@@ -118,7 +121,26 @@ function Lost_item() {
                 value={itemname}
                 onChange={(e) => setitemname(e.target.value)}
               />
+            </Form.Group> */} 
+            <Form.Group>
+              <Form.Label>Category<span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Control
+                as="select"
+                required={true}
+                defaultValue="Choose a catagory"
+                onChange={(e) => setitemname(e.target.value)}
+              >
+                <option>Choose..</option>
+                <option value={"Person"}>Person</option>
+                <option value={"Pet"}>Pet</option>
+                <option value={"Electronics"}>Electronics</option>
+                <option value={"Vehicle"}>Vehicle</option>
+                <option value={"Accesories"}>Accesories</option>
+                <option value={"Documents"}>Documents</option>
+                <option value={"others"}>others</option>
+              </Form.Control>
             </Form.Group>
+
 
             <Form.Group>
               <Form.Label>Description<span style={{color:"red"}}>*</span></Form.Label>
@@ -176,7 +198,7 @@ function Lost_item() {
                 onChange={(e) => settime(e.target.value)} 
               /> */}
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.File
                 type="file"
                 id="formimage"
@@ -191,7 +213,27 @@ function Lost_item() {
                 }}
                 multiple
               />
+            </Form.Group> */}
+
+            <Form.Group>
+              
+            <input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg"
+                
+                onChange={(e) => {
+                  // console.log(e.target.files)
+                  let { files } = e.target;
+                  lodash.forEach(files, (file) => {
+                    console.log(file);
+                    setitemimage((item) => [...item, file]);
+                  });
+                }}
+                multiple
+                />
+            
             </Form.Group>
+
           </Form>
         </Modal.Body>
         <Modal.Footer>

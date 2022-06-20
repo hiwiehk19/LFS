@@ -100,10 +100,15 @@ export default function Feed() {
                 {/* <li key={item.name}>{item.name}</li>
                 <li key={item.description}>{item.description}</li> */}
                 <Card bsPrefix="item-card" style={{maxHeight:"465px"}} >
-                  <Card.Img
+
+
+                   <Card.Img
                     variant="top"
                     src={`http://localhost:5000/${item.itemPictures[0].img}`}
-                  />
+                     alt="item image"
+                  />  
+
+                 
                   <Card.Body bsPrefix="card-body" >
                     <Card.Title>Item :{item.name}</Card.Title>
                     {/* <Card.Text>Type :{item.type}</Card.Text> */}

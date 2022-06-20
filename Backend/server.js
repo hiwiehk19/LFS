@@ -60,7 +60,8 @@ app.use(passport.session())
 //       done(err, user);
 //     });
 // });
-const MONGO_URL=`mongodb+srv://lostDB:hiwotzelalem@cluster0.pgdto.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+//const MONGO_URL=`mongodb+srv://lostDB:hiwotzelalem@cluster0.pgdto.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const MONGO_URL=`mongodb://localhost:27017/lfs`
 
  mongoose.connect(MONGO_URL,{
     useNewUrlParser: true,

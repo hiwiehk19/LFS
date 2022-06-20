@@ -285,7 +285,7 @@ router.post('/sendmessage',(req,res)=>{
 
     const mailOption={
         from:email,
-        to:'hiwotzelalem3@gmail.com@gmail.com',
+        to:'hiwotzelalem3@gmail.com',
         subject:`Review from ${name}`,
         text:message
     }

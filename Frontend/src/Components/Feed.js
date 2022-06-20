@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 import "../css/feed.css";
 import "../css/item_card.css";
 import Axios from "axios";
-import { Card, Col, Container, Row,Alert } from "react-bootstrap";
+import { Card, Col, Container, Row,Alert,Form  } from "react-bootstrap";
 
 export default function Feed() {
   // console.log("Status :", LOGGED_IN)
@@ -94,6 +94,7 @@ export default function Feed() {
           //   // prints "The author is Ian Fleming"
           // });
           // console.log(item.itemPictures[0].img)
+         
           if (item.type === "Lost" && item.status===true) {
             let user = false;
             if (item.createdBy === user_info._id) {
@@ -105,6 +106,8 @@ export default function Feed() {
               <a
                 href={`/${item.name}?cid=${item._id}&type=${item.type}/${user}`}
               >
+               
+               
                 <Col key={item.name} style={{ marginTop: "2%" }} md={3}>
                   {/* <li key={item.name}>{item.name}</li>
                 <li key={item.description}>{item.description}</li> */}
@@ -120,7 +123,7 @@ export default function Feed() {
                           fontWeight: "1.35rem",
                         }}
                       >
-                        Item :{item.name}
+                        Item: {item.name}
                       </Card.Title>
                       {/* <Card.Text>Type :{item.type}</Card.Text> */}
                       {item.description ? (
@@ -237,6 +240,26 @@ export default function Feed() {
         console.log("Error :", err);
       });
   }, []);
+ // const ReadMore = ({ children }) =>
+ const filterContent = (postitem, searchTerm)=> {
+    
+    const result = postitem.filter(
+      (item) =>
+       item.name.toLowerCase().includes(searchTerm) ||
+       item.description.toLowerCase().includes(searchTerm) ||
+       item.type.toLowerCase().includes(searchTerm)
+    );
+    this.setState({ postitem: result });
+  }
+  let handleTextSearch = (e) => {
+    const searchTerm = e.currentTarget.value;
+    
+    Axios.get("/getitem").then((res) => {
+      if (res.data.success) {
+        filterContent(res.data.postitem, searchTerm);
+      }
+    });
+  };
 
   return (
     <div>
@@ -251,6 +274,31 @@ export default function Feed() {
           Welcome {user_info.firstname} 👋!
         </h2>
       </div>
+      <div className="col-lg-3 mt-2 mb-2">
+          <input
+            className="form-control"
+            type="search"
+            placeholder="Search"
+            name="searchTerm"
+            onChange={handleTextSearch}
+          ></input>
+        </div> 
+        
+        <div className="row">
+          <div className="col"> 
+             <button className="btn">All </button>
+             <button className="btn">Person </button>
+             <button className="btn">Pet</button>
+             <button className="btn">Electronics </button>
+             <button className="btn">Vehicle</button>
+             <button className="btn">Accesories</button>
+             <button className="btn">Documents</button>
+             <button className="btn">others</button>
+
+          </div>
+        
+        </div>
+      
       <div>
         <Container fluid>
           <h2 style={{ textAlign: "center" }}>Lost items :</h2>
